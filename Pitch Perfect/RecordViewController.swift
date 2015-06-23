@@ -30,7 +30,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     // initialize the type of formatter we're using
     formatter.dateFormat = "yyyyMMdd-HHmmss"
     // initialize the directory path where we'll save the sound files to
-    dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
 
     // add a button to the navigation menu
     let fileBrowserButton = UIBarButtonItem(image: UIImage(named: "browser"), style: .Plain, target: self, action: "goToFileBrowser")
@@ -45,13 +45,12 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if (segue.identifier == "stopRecording") {
-      let effectsViewController: EffectsViewController = segue.destinationViewController as EffectsViewController
-      let data = sender as RecordedAudio
+      let effectsViewController: EffectsViewController = segue.destinationViewController as! EffectsViewController
+      let data = sender as! RecordedAudio
       effectsViewController.recordedAudio = data
     }
   }

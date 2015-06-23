@@ -15,6 +15,6 @@ class RecordedAudio: NSObject {
   init(url: NSURL, title: NSString) {
     println(url)
     self.filePathUrl = url
-    self.title = title
+    self.title = title as String
   }
 }

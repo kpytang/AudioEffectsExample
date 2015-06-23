@@ -3,7 +3,7 @@
 //  Pitch Perfect
 //
 //  Created by Karen Tang on 6/21/15.
-//  Copyright (c) 2015 Yugen Labs. All rights reserved.
+//  Copyright (c) 2015 KPT. All rights reserved.
 //
 
 import UIKit
